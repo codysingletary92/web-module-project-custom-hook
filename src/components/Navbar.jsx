@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import saveLocalStorage from "../hooks/saveLocalStorage"
 
 const Navbar = (props) => {
   const toggleMode = e => {
     e.preventDefault();
     props.setDarkMode(!props.darkMode);
+    saveLocalStorage(!props.darkMode)
+    console.log('navbar kick')
   };
+
+  
 
   return (
     <nav className="navbar">
